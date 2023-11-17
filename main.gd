@@ -25,7 +25,7 @@ func _ready():
 		for j in range(0, height):
 			var case = caseScene.instantiate()
 			case.name = str((j-5)*-1)
-			case.fullPos = "["+column.name+XYdelimiter+case.name+"]"
+			case.fullPos = '['+column.name+XYdelimiter+case.name+']'
 			case.connect("selected", self.on_selected_received)
 			column.add_child(case)
 
@@ -36,14 +36,14 @@ func on_selected_received(name):
 	else:
 		allSelectedCases.append(name)
 
-	var printableList = "{"
+	var printableList = '{"cases":['
 	
 	for case in allSelectedCases:
 		printableList += str(case)
 		printableList += caseDelimiter
 	
-	printableList[-1] = "}"
-
+	printableList[-1] = ']'
+	printableList += '}'
 	
 	$VBoxContainer/HBoxContainer/CasesLabel.text = printableList
 
