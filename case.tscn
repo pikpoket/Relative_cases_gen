@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjtaae801t6nb"]
+
+[ext_resource type="Texture2D" uid="uid://qbqkgghdlqfs" path="res://icon.svg" id="1_b1xve"]
+[ext_resource type="Script" path="res://Case.gd" id="2_adigy"]
+
+[node name="Case" type="TextureButton"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 24.0
+offset_bottom = 24.0
+toggle_mode = true
+texture_normal = ExtResource("1_b1xve")
+texture_pressed = ExtResource("1_b1xve")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("2_adigy")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "test"
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]
